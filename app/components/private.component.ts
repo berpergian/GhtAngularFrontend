@@ -5,6 +5,7 @@ import {AuthenticationService} from '../services/authentication.service';
     selector: 'login-form',
     providers: [AuthenticationService],
     template: `
+            <br><br><br><br>
             <div class="container" >
                 <div class="content">
                     <span>Congratulations, you have successfully logged in!!</span>

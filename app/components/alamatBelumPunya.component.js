@@ -9,19 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var alamatBelumPunya = (function () {
-    function alamatBelumPunya() {
-        this.items = ['DKI Jakarta', 'Bandung', 'Semarang', 'Surabaya',
+var AddressNotFoundComponent = (function () {
+    function AddressNotFoundComponent() {
+        this.items = ['DKI Jakarta', 'Bandung', 'Semarang'
         ];
-        this.items1 = ['item 1', 'item 2', 'item 3', 'item 4',
-            'item 5'];
+        this.items1 = ['item 1', 'item 2', 'item 3', 'item 4'];
         this.items2 = ['item a', 'item b', 'item c', 'item d',
-            'item e'];
+            'item e', 'item f', 'item g', 'item h',];
         this.value = {};
         this._disabledV = '0';
         this.disabled = false;
     }
-    Object.defineProperty(alamatBelumPunya.prototype, "disabledV", {
+    Object.defineProperty(AddressNotFoundComponent.prototype, "disabledV", {
         get: function () {
             return this._disabledV;
         },
@@ -32,26 +31,26 @@ var alamatBelumPunya = (function () {
         enumerable: true,
         configurable: true
     });
-    alamatBelumPunya.prototype.selected = function (value) {
+    AddressNotFoundComponent.prototype.selected = function (value) {
         console.log('Selected value is: ', value);
     };
-    alamatBelumPunya.prototype.removed = function (value) {
+    AddressNotFoundComponent.prototype.removed = function (value) {
         console.log('Removed value is: ', value);
     };
-    alamatBelumPunya.prototype.typed = function (value) {
+    AddressNotFoundComponent.prototype.typed = function (value) {
         console.log('New search input: ', value);
     };
-    alamatBelumPunya.prototype.refreshValue = function (value) {
+    AddressNotFoundComponent.prototype.refreshValue = function (value) {
         this.value = value;
     };
-    alamatBelumPunya = __decorate([
+    AddressNotFoundComponent = __decorate([
         core_1.Component({
             selector: 'alamatBelumPunya',
             templateUrl: 'app/templates/alamatBelumPunya.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], alamatBelumPunya);
-    return alamatBelumPunya;
+    ], AddressNotFoundComponent);
+    return AddressNotFoundComponent;
 }());
-exports.alamatBelumPunya = alamatBelumPunya;
+exports.AddressNotFoundComponent = AddressNotFoundComponent;
 //# sourceMappingURL=alamatBelumPunya.component.js.map

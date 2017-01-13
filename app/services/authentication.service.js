@@ -10,12 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var customer_1 = require('../class/customer');
-var users = [
-    new customer_1.User('admin@admin.com', 'adm9'),
-    new customer_1.User('user1@gmail.com', 'a23'),
-    new customer_1.User('admin', 'admin')
-];
+var mock_allcustomer_1 = require('../mock/mock-allcustomer');
 var AuthenticationService = (function () {
     function AuthenticationService(_router) {
         this._router = _router;
@@ -24,10 +19,10 @@ var AuthenticationService = (function () {
         localStorage.removeItem("user");
         this._router.navigate(['login']);
     };
-    AuthenticationService.prototype.login = function (User) {
-        var authenticatedUser = users.find(function (u) { return u.email === User.email; });
-        if (authenticatedUser && authenticatedUser.password === User.password) {
-            localStorage.setItem("user", authenticatedUser);
+    AuthenticationService.prototype.login = function (user) {
+        var authenticatedUser = mock_allcustomer_1.USER.find(function (u) { return u.email === user.email; });
+        if (authenticatedUser && authenticatedUser.password === user.password) {
+            localStorage.setItem("user", JSON.stringify(authenticatedUser));
             this._router.navigate(['loginsuccess']);
             return true;
         }

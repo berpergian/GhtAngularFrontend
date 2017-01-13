@@ -8,15 +8,14 @@ import { ProductService } from '../services/product.service';
 })
 
 
-export class alamatBelumPunya {
-  public items:Array<string> = ['DKI Jakarta', 'Bandung', 'Semarang', 'Surabaya',
+export class AddressNotFoundComponent {
+  public items:Array<string> = ['DKI Jakarta', 'Bandung', 'Semarang'
     ];
 
-  public items1:Array<string> = ['item 1', 'item 2', 'item 3', 'item 4',
-    'item 5'];
+  public items1:Array<string> = ['item 1', 'item 2', 'item 3', 'item 4'];
 
    public items2:Array<string> = ['item a', 'item b', 'item c', 'item d',
-    'item e'];
+    'item e','item f','item g','item h',];
 
   private value:any = {};
   private _disabledV:string = '0';

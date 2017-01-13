@@ -3,12 +3,6 @@ import {Router} from '@angular/router';
 import {USER} from '../mock/mock-allcustomer';
 import { User } from '../class/customer';
 
-var users = [
-  new User('admin@admin.com','adm9'),
-  new User('user1@gmail.com','a23'),
-  new User('admin','admin')
-];
-
 @Injectable()
 export class AuthenticationService {
 
@@ -20,10 +14,10 @@ export class AuthenticationService {
     this._router.navigate(['login']);
   }
 
-  login(User){
-    var authenticatedUser = users.find(u => u.email === User.email);
-    if (authenticatedUser && authenticatedUser.password === User.password){
-      localStorage.setItem("user", authenticatedUser);
+  login(user){
+    var authenticatedUser = USER.find(u => u.email === user.email);
+    if (authenticatedUser && authenticatedUser.password === user.password){
+      localStorage.setItem("user", JSON.stringify(authenticatedUser));
       this._router.navigate(['loginsuccess']);
       return true;
     }

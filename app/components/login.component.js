@@ -14,6 +14,7 @@ var customer_1 = require('../class/customer');
 var LoginComponent = (function () {
     function LoginComponent(_service) {
         this._service = _service;
+        this.judul = 'Login to Your Account';
         this.user = new customer_1.User('', '');
         this.errorMsg = '';
     }
@@ -25,7 +26,8 @@ var LoginComponent = (function () {
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'login-form',
-            templateUrl: 'app/templates/login.component.html'
+            templateUrl: 'app/templates/login.component.html',
+            styleUrls: ['app/css/login.component.css']
         }), 
         __metadata('design:paramtypes', [authentication_service_1.AuthenticationService])
     ], LoginComponent);

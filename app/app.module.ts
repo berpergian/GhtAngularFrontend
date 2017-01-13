@@ -10,6 +10,9 @@ import { LoginComponent } from './components/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThanksComponent } from './components/thanks.component';
 import { CartComponent } from './components/cart.component';
+import { PrivateComponent } from './components/private.component';
+import { AddressFoundComponent } from './components/alamatPunya.component';
+import { AddressNotFoundComponent } from './components/alamatBelumPunya.component';
 
 import { ProductService } from './services/product.service';
 import { AuthenticationService } from './services/authentication.service';
@@ -27,7 +30,10 @@ import { AuthenticationService } from './services/authentication.service';
   ProductComponent,
   LoginComponent,
   ThanksComponent,
-  CartComponent
+  CartComponent,
+  PrivateComponent,
+  AddressFoundComponent,
+  AddressNotFoundComponent
   ],
   providers: [ ProductService, AuthenticationService ],
   bootstrap:    [ AppComponent ]

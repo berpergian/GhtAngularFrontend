@@ -19,6 +19,9 @@ var login_component_1 = require('./components/login.component');
 var app_routing_module_1 = require('./app-routing.module');
 var thanks_component_1 = require('./components/thanks.component');
 var cart_component_1 = require('./components/cart.component');
+var private_component_1 = require('./components/private.component');
+var alamatPunya_component_1 = require('./components/alamatPunya.component');
+var alamatBelumPunya_component_1 = require('./components/alamatBelumPunya.component');
 var product_service_1 = require('./services/product.service');
 var authentication_service_1 = require('./services/authentication.service');
 var AppModule = (function () {
@@ -38,7 +41,10 @@ var AppModule = (function () {
                 product_component_1.ProductComponent,
                 login_component_1.LoginComponent,
                 thanks_component_1.ThanksComponent,
-                cart_component_1.CartComponent
+                cart_component_1.CartComponent,
+                private_component_1.PrivateComponent,
+                alamatPunya_component_1.AddressFoundComponent,
+                alamatBelumPunya_component_1.AddressNotFoundComponent
             ],
             providers: [product_service_1.ProductService, authentication_service_1.AuthenticationService],
             bootstrap: [app_component_1.AppComponent]

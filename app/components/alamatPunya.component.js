@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var CartComponent = (function () {
-    function CartComponent() {
+var AddressFoundComponent = (function () {
+    function AddressFoundComponent() {
     }
-    CartComponent = __decorate([
+    AddressFoundComponent = __decorate([
         core_1.Component({
             selector: 'alamat-punya',
-            templateUrl: 'app/templates/product.component.html'
+            templateUrl: 'app/templates/alamatPunya.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], CartComponent);
-    return CartComponent;
+    ], AddressFoundComponent);
+    return AddressFoundComponent;
 }());
-exports.CartComponent = CartComponent;
+exports.AddressFoundComponent = AddressFoundComponent;
 //# sourceMappingURL=alamatPunya.component.js.map

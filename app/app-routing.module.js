@@ -16,6 +16,8 @@ var login_component_1 = require('./components/login.component');
 var thanks_component_1 = require('./components/thanks.component');
 var cart_component_1 = require('./components/cart.component');
 var private_component_1 = require('./components/private.component');
+var alamatPunya_component_1 = require('./components/alamatPunya.component');
+var alamatBelumPunya_component_1 = require('./components/alamatBelumPunya.component');
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: home_component_1.HomeComponent },
@@ -23,7 +25,9 @@ var routes = [
     { path: 'login', component: login_component_1.LoginComponent },
     { path: 'thanks', component: thanks_component_1.ThanksComponent },
     { path: 'cart', component: cart_component_1.CartComponent },
-    { path: 'loginsuccess', component: private_component_1.PrivateComponent }
+    { path: 'loginsuccess', component: private_component_1.PrivateComponent },
+    { path: 'addressnotfound', component: alamatBelumPunya_component_1.AddressNotFoundComponent },
+    { path: 'addressfound', component: alamatPunya_component_1.AddressFoundComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

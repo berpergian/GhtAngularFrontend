@@ -24,7 +24,7 @@ var PrivateComponent = (function () {
         core_1.Component({
             selector: 'login-form',
             providers: [authentication_service_1.AuthenticationService],
-            template: "\n            <div class=\"container\" >\n                <div class=\"content\">\n                    <span>Congratulations, you have successfully logged in!!</span>\n                    <br />\n                    <a (click)=\"logout()\" href=\"#\">Click Here to logout</a>\n                </div>\n            </div>\n    \t"
+            template: "\n            <br><br><br><br>\n            <div class=\"container\" >\n                <div class=\"content\">\n                    <span>Congratulations, you have successfully logged in!!</span>\n                    <br />\n                    <a (click)=\"logout()\" href=\"#\">Click Here to logout</a>\n                </div>\n            </div>\n    \t"
         }), 
         __metadata('design:paramtypes', [authentication_service_1.AuthenticationService])
     ], PrivateComponent);

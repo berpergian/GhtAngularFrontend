@@ -5,11 +5,12 @@ import {User} from '../class/customer';
 
 @Component({
     selector: 'login-form',
-    templateUrl: 'app/templates/login.component.html'
+    templateUrl: 'app/templates/login.component.html',
+    styleUrls: [ 'app/css/login.component.css' ]
 })
 
 export class LoginComponent {
-  judul: 'Login to Your Account';
+  judul= 'Login to Your Account';
 
   public user = new User('','');
   public errorMsg = '';

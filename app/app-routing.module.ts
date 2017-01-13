@@ -8,6 +8,8 @@ import { LoginComponent } from './components/login.component';
 import { ThanksComponent } from './components/thanks.component';
 import { CartComponent } from './components/cart.component';
 import { PrivateComponent } from './components/private.component';
+import { AddressFoundComponent } from './components/alamatPunya.component';
+import { AddressNotFoundComponent } from './components/alamatBelumPunya.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'thanks', component: ThanksComponent},
   { path: 'cart', component: CartComponent},
-  { path: 'loginsuccess', component: PrivateComponent}
+  { path: 'loginsuccess', component: PrivateComponent},
+  { path: 'addressnotfound', component: AddressNotFoundComponent},
+  { path: 'addressfound', component: AddressFoundComponent},
 ];
 
 @NgModule({
