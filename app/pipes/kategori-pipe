@@ -1,0 +1,17 @@
+import {Pipe,PipeTransform} from 'angular2/core';
+@Pipe({
+    name:'filter-kategori'
+})
+
+export class CategoryPipe implements PipeTransform{
+    transform(value:any){
+        var input = '';
+        if(value<5)
+            input = 'Average';
+        else if(value>10)
+            input = 'Over Qualified (Exp '+value+')';
+       else
+            input = value
+        return input;
+    }
+}

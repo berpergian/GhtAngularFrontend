@@ -1,0 +1,26 @@
+<br><br><br><br>
+<div class="container">
+ <h2 style="margin-left:100px;">Order Total {{h.harga | currency:'USD'}}</h2>
+
+<h2 style="margin-left:100px;">Choose Your Address</h2>
+
+ <div class="container-fluid" style=" margin: auto;width: 70em; height: 27em;border:1px solid #cecece;">
+    <div class="row">                                         
+      <!-- Need to add theme, buttons -->                       
+      <div class="alamat" style=" ;
+    top: 10px;
+    margin-left: 2px;
+    border: 3px solid #73AD21;width: 20em;margin-top:10px; height: 22em; border: 1px solid #00aaaa;"> {{user.nama}} <br>{{user.kota}} </div>          
+    </div>                                                      
+    <div class="row">                                           
+      <!-- Need to add theme, buttons -->
+      <button type="button" class="btn btn-primary" style="width: 24.5em;height:2.5em;margin-top:5px">add new address</button>                                    
+    </div>
+
+
+    </div>                                                     
+</div>
+<div style="position:absolute;right:400px;margin-top:10px;">
+<button type="button" class="btn btn-primary" style="width: 10em;height:2.5em;">Back</button>
+<button type="button" class="btn btn-primary" style="width: 10em;height:2.5em;">Order</button>
+</div>

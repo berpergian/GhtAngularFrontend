@@ -1,0 +1,47 @@
+<br><br><br><br>
+
+<div class="container">
+<h1 style="margin-left:10px;">{{title}}</h1>
+<h5 style="margin-left:10px;">Order Number : {{orderNumber}}</h5>
+
+
+ <div class="container-fluid" style=" margin: auto;border:1px solid #cecece;">
+
+    <div class="row">                                         
+	
+	<div class="col-md-6">
+	
+	<div style="margin-left:40px">
+	<h2>Order Total</h2>
+	
+	<p class="lead">{{total | currency:'IDR'}}</p>
+	</div>
+	</div>
+	
+	<div class="col-md-6">
+	<h2>Shipping Address</h2>
+
+	<h3>{{nama}}</h3>
+	<h3>{{propinsi}},{{kota}},{{kec}}</h3>
+	<h3>{{noHP}}</h3>
+	</div>
+	</div>
+</div>
+<div class="row">
+  <div class="col-md-3 col-md-offset-6">
+   <div class="has-warning">
+  <div class="checkbox">
+    <label *ngFor="let cb of checkboxes">
+      <input type="checkbox" [(ngModel)]="cb.state">{{cb.label}}
+    </label>
+  </div>
+  <br>
+    <button [disabled]="buttonState()" type="submit" class="btn btn-primary">Place Order</button>
+  
+  </div>
+
+</div>
+  
+ </div>
+ 
+ </div>
