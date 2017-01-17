@@ -10,18 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var authentication_service_1 = require('../services/authentication.service');
+var router_1 = require('@angular/router');
 var customer_1 = require('../class/customer');
 var LoginComponent = (function () {
-    function LoginComponent(_service) {
+    function LoginComponent(_router, _service) {
+        this._router = _router;
         this._service = _service;
         this.judul = 'Login to Your Account';
         this.user = new customer_1.User('', '');
         this.errorMsg = '';
     }
-    LoginComponent.prototype.login = function () {
-        if (!this._service.login(this.user)) {
-            this.errorMsg = 'Failed to login';
-        }
+    LoginComponent.prototype.onSumbitLgn = function () {
+        var _this = this;
+        this._service.login(this.user.email, this.user.password).subscribe(function (result) {
+            if (result) {
+                _this._router.navigate(['loginsuccess']);
+            }
+            else {
+                _this.errorMsg = 'Failed to login';
+            }
+        });
     };
     LoginComponent = __decorate([
         core_1.Component({
@@ -29,7 +37,7 @@ var LoginComponent = (function () {
             templateUrl: 'app/templates/login.component.html',
             styleUrls: ['app/css/login.component.css']
         }), 
-        __metadata('design:paramtypes', [authentication_service_1.AuthenticationService])
+        __metadata('design:paramtypes', [router_1.Router, authentication_service_1.AuthenticationService])
     ], LoginComponent);
     return LoginComponent;
 }());

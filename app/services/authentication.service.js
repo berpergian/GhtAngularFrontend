@@ -9,33 +9,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var mock_allcustomer_1 = require('../mock/mock-allcustomer');
+var http_1 = require('@angular/http');
+require('rxjs/add/operator/map');
 var AuthenticationService = (function () {
-    function AuthenticationService(_router) {
-        this._router = _router;
+    function AuthenticationService(http) {
+        this.http = http;
     }
     AuthenticationService.prototype.logout = function () {
-        localStorage.removeItem("user");
-        this._router.navigate(['login']);
+        localStorage.removeItem('auth_token');
+        //this._router.navigate(['login']);
     };
-    AuthenticationService.prototype.login = function (user) {
-        var authenticatedUser = mock_allcustomer_1.USER.find(function (u) { return u.email === user.email; });
-        if (authenticatedUser && authenticatedUser.password === user.password) {
-            localStorage.setItem("user", JSON.stringify(authenticatedUser));
-            this._router.navigate(['loginsuccess']);
-            return true;
+    AuthenticationService.prototype.login = function (email, password) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        /*var authenticatedUser = USER.find(u => u.email === user.email);
+        if (authenticatedUser && authenticatedUser.password === user.password){
+          localStorage.setItem("user", JSON.stringify(authenticatedUser));
+          this._router.navigate(['loginsuccess']);
+          return true;
         }
-        return false;
+        return false;*/
+        /*return this.http.post('<API>',JSON.stringify({email,password})),{headers}
+        .map(res => res.json())
+        .map((res) =>{
+          if(res.success){
+            localStorage.setItem('auth_token', res.auth_token);
+          }
+          return res.success;
+        });*/
+        return this.http
+            .post('<API>', JSON.stringify({ email: email, password: password }), { headers: headers })
+            .map(function (res) { return res.json(); })
+            .map(function (res) {
+            if (res.success) {
+                localStorage.setItem('auth_token', res.auth_token);
+            }
+            return res.success;
+        });
     };
     AuthenticationService.prototype.checkCredentials = function () {
         if (localStorage.getItem("user") === null) {
-            this._router.navigate(['login']);
         }
     };
     AuthenticationService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [http_1.Http])
     ], AuthenticationService);
     return AuthenticationService;
 }());
