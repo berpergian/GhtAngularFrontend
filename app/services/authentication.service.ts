@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, Response } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {USER} from '../mock/mock-allcustomer';
 import { User } from '../class/customer';
@@ -27,7 +27,7 @@ export class AuthenticationService {
     }
     return false;*/
 
-    /*return this.http.post('<API>',JSON.stringify({email,password})),{headers}
+    /*return this.http.post('http://127.0.0.1:3000/Customer/',JSON.stringify({email,password})),{headers}
     .map(res => res.json())
     .map((res) =>{
       if(res.success){
@@ -36,22 +36,37 @@ export class AuthenticationService {
       return res.success;
     });*/
     return this.http
-      .post(
-        '<API>',
-        JSON.stringify({ email, password }),
-        { headers }
+      .get(
+        'http://127.0.0.1:8000/Customer/?format=json'/*,
+        JSON.stringify({ email: email, password: password }*),
+        { headers }*/
       )
-      .map(res => res.json())
+      /*.map(res => res.json())
       .map((res) => {
         if (res.success) {
           localStorage.setItem('auth_token', res.auth_token);
         }
+        console.log(res.json());
         return res.success;
-      });
+      });*/
+      .map((response: Response) => {
+        let user = response.json();
+        //console.log(user);
+        let i:number;
+        for(i=0;i<user.results.length;i++)
+        {
+          if(user.results[i].email === email && user.results[i].password === password){
+            //console.log(user.results[i].email);
+            localStorage.setItem('currentUser',JSON.stringify(user));
+            return true;
+          }
+        }
+        return false;
+      })
   }
 
    checkCredentials(){
-    if (localStorage.getItem("user") === null){
+    if (localStorage.getItem('currentUser') === null){
         //this._router.navigate(['login']);
     }
   }

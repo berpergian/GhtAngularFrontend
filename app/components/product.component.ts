@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Cart } from '../mock/mock-cart';
 
 @Component({
-  selector: 'app-handphone',
+  selector: 'app-product',
   templateUrl: 'app/templates/product.component.html'
 })
 
